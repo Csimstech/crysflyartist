@@ -21,6 +21,7 @@ export function SiteFooter() {
             links={[
               { label: "Work", href: "/gallery" },
               { label: "Collections", href: "/collections" },
+              { label: "Commissions", href: "/commissions" },
               { label: "About", href: "/about" },
               { label: "Exhibitions", href: "/about#exhibitions" },
             ]}
@@ -61,7 +62,7 @@ function FooterCol({
       </h4>
       {links.map((l) =>
         l.external ? (
-          <a
+          
             key={l.label}
             href={l.href}
             target="_blank"
