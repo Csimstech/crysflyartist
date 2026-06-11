@@ -30,6 +30,7 @@ export function SiteFooter() {
             title="Connect"
             links={[
               { label: "Inquire", href: "/contact" },
+              { label: "Press", href: "/press" },
               { label: "Tumblr", href: "https://www.tumblr.com/crysfly", external: true },
               { label: "Email", href: "mailto:crysflyartist@gmail.com" },
             ]}
