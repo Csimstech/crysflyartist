@@ -31,7 +31,7 @@ export function SiteFooter() {
             links={[
               { label: "Inquire", href: "/contact" },
               { label: "Tumblr", href: "https://www.tumblr.com/crysfly", external: true },
-              { label: "Email", href: "mailto:studio@crysflyartist.com" },
+              { label: "Email", href: "mailto:crysflyartist@gmail.com" },
             ]}
           />
         </div>

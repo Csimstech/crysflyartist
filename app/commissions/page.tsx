@@ -196,7 +196,7 @@ export default function CommissionsPage() {
               days.
             </p>
             <p className="mt-10 font-sans text-[0.72rem] uppercase tracking-[0.18em] text-ivory-45">
-              Prefer email? <Link href="mailto:studio@crysflyartist.com" className="text-gold transition-colors hover:text-ivory">studio@crysflyartist.com</Link>
+              Prefer email? <Link href="mailto:crysflyartist@gmail.com" className="text-gold transition-colors hover:text-ivory">crysflyartist@gmail.com</Link>
             </p>
           </Reveal>
           <Reveal delay={0.1}>

@@ -27,7 +27,7 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-12 space-y-7 border-t border-[var(--line)] pt-10">
-            <ContactItem label="Email" value="studio@crysflyartist.com" href="mailto:studio@crysflyartist.com" />
+            <ContactItem label="Email" value="crysflyartist@gmail.com" href="mailto:crysflyartist@gmail.com" />
             <ContactItem label="Studio" value="Atlanta, Georgia" />
             <ContactItem label="Tumblr" value="@crysfly" href="https://www.tumblr.com/crysfly" external />
           </div>

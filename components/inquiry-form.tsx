@@ -141,7 +141,7 @@ export function InquiryForm({ artworkTitle, artworkYear, variant = "dark" }: Inq
         </button>
         <p className={`max-w-[34ch] font-sans text-[0.66rem] leading-relaxed ${dark ? "text-ivory-45" : "text-[var(--ink-42)]"}`}>
           {status === "error"
-            ? "Something went wrong — please email studio@crysflyartist.com directly."
+            ? "Something went wrong — please email crysflyartist@gmail.com directly."
             : "By sending, you agree to be contacted by the studio regarding this inquiry. Your details are never shared."}
         </p>
       </div>
