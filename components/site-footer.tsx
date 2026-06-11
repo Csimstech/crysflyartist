@@ -63,7 +63,7 @@ function FooterCol({
       </h4>
       {links.map((l) =>
         l.external ? (
-          
+          <a
             key={l.label}
             href={l.href}
             target="_blank"
