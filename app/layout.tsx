@@ -1,31 +1,18 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Cormorant_Garamond, Inter } from "next/font/google";
+import "@fontsource-variable/playfair-display/index.css";
+import "@fontsource-variable/playfair-display/wght-italic.css";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource/cormorant-garamond/300.css";
+import "@fontsource/cormorant-garamond/300-italic.css";
+import "@fontsource/cormorant-garamond/400.css";
+import "@fontsource/cormorant-garamond/400-italic.css";
+import "@fontsource/cormorant-garamond/500.css";
+import "@fontsource/cormorant-garamond/500-italic.css";
+import "@fontsource/cormorant-garamond/600.css";
+import "@fontsource/cormorant-garamond/600-italic.css";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://crysflyartist.com";
 
@@ -90,10 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${playfair.variable} ${cormorant.variable} ${inter.variable}`}
-    >
+    <html lang="en">
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"

@@ -16,9 +16,9 @@ const config: Config = {
         gold: { DEFAULT: "#C6A15B", deep: "#A9842F" },
       },
       fontFamily: {
-        serif: ["var(--font-playfair)", "Georgia", "serif"],
-        cormorant: ["var(--font-cormorant)", "Georgia", "serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        serif: ['"Playfair Display Variable"', "Georgia", "serif"],
+        cormorant: ['"Cormorant Garamond"', "Georgia", "serif"],
+        sans: ['"Inter Variable"', "system-ui", "sans-serif"],
       },
       maxWidth: { site: "1480px" },
       transitionTimingFunction: { editorial: "cubic-bezier(.22,.61,.36,1)" },
