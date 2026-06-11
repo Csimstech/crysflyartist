@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --char: #141312;
+  --char-soft: #1c1b1a;
+  --char-deep: #0f0e0d;
+  --ivory: #f7f1e8;
+  --ivory-2: #f1e9dc;
+  --sand: #d8c3a5;
+  --sienna: #a0522d;
+  --burgundy: #5a1f2e;
+  --gold: #c6a15b;
+  --gold-deep: #a9842f;
+  --ink-60: rgba(20, 19, 18, 0.62);
+  --ink-42: rgba(20, 19, 18, 0.42);
+  --ivory-70: rgba(247, 241, 232, 0.72);
+  --ivory-45: rgba(247, 241, 232, 0.45);
+  --ivory-22: rgba(247, 241, 232, 0.22);
+  --line: rgba(20, 19, 18, 0.14);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --pad: clamp(1.4rem, 5vw, 5.5rem);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--ivory);
+    color: var(--char);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  /* faint archival grain */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection {
+    background: var(--gold);
+    color: var(--char);
+  }
+  :focus-visible {
+    outline: 2px solid var(--gold-deep);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .container-site {
+    max-width: var(--maxw, 1480px);
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+  .eyebrow {
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 500;
+    font-size: 0.66rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+  }
+  .eyebrow .dot {
+    color: var(--gold-deep);
+    margin-inline: 0.5em;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7em;
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 1.1em 1.9em;
+    border: 1px solid var(--char);
+    transition: all 0.5s var(--ease);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .btn .arr {
+    transition: transform 0.5s var(--ease);
+  }
+  .btn:hover .arr {
+    transform: translateX(5px);
+  }
+  .btn-solid {
+    background: var(--char);
+    color: var(--ivory);
+  }
+  .btn-solid:hover {
+    background: transparent;
+    color: var(--char);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--char);
+  }
+  .btn-ghost:hover {
+    background: var(--char);
+    color: var(--ivory);
+  }
+  .btn-gold {
+    background: var(--gold-deep);
+    color: var(--ivory);
+    border-color: var(--gold-deep);
+  }
+  .btn-gold:hover {
+    background: transparent;
+    color: var(--char);
+    border-color: var(--char);
+  }
+  .btn-light {
+    background: transparent;
+    color: var(--ivory);
+    border-color: var(--ivory);
+  }
+  .btn-light:hover {
+    background: var(--ivory);
+    color: var(--char);
+  }
+  .tlink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 500;
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid var(--char);
+    transition: gap 0.4s var(--ease), color 0.4s var(--ease),
+      border-color 0.4s var(--ease);
+  }
+  .tlink:hover {
+    gap: 1em;
+    color: var(--gold-deep);
+    border-color: var(--gold-deep);
+  }
+}
