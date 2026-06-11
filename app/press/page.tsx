@@ -124,7 +124,7 @@ export default function PressPage() {
                     </div>
                     <figcaption className="mt-3 flex items-center justify-between gap-3">
                       <span className="font-sans text-[0.64rem] uppercase tracking-[0.14em] text-ivory-45">{img.label}</span>
-                      
+                      <a
                         href={img.src}
                         download
                         className="flex-shrink-0 font-sans text-[0.64rem] uppercase tracking-[0.16em] text-gold transition-colors hover:text-ivory"
@@ -153,7 +153,7 @@ export default function PressPage() {
             <div className="max-w-[1000px]">
               {press.map((p) => (
                 <Reveal key={p.outlet + p.title}>
-                  
+                  <a
                     href={p.url ?? "#"}
                     target={p.url ? "_blank" : undefined}
                     rel={p.url ? "noopener noreferrer" : undefined}

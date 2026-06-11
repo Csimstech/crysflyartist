@@ -61,12 +61,26 @@ export function InquiryForm({ artworkTitle, artworkYear, variant = "dark" }: Inq
           body: JSON.stringify({ ...data, regarding: artworkTitle ?? "General inquiry" }),
         });
         if (!res.ok) throw new Error("Request failed");
+        form.reset();
+        setStatus("sent");
       } else {
-        // No endpoint configured yet — simulate success so the UI is testable.
-        await new Promise((r) => setTimeout(r, 700));
+        // No delivery endpoint configured yet — hand off to the visitor's own
+        // email client with everything pre-filled, so no inquiry is ever lost.
+        const get = (k: string) => String(data[k] ?? "");
+        const subject = `Inquiry${artworkTitle ? ` — ${artworkTitle}${artworkYear ? ` (${artworkYear})` : ""}` : ""}`;
+        const body = [
+          `Name: ${get("name")}`,
+          `Email: ${get("email")}`,
+          `I am a: ${get("role")}`,
+          `Inquiry type: ${get("purpose")}`,
+          "",
+          get("message"),
+        ].join("\n");
+        window.location.href = `mailto:crysflyartist@gmail.com?subject=${encodeURIComponent(
+          subject,
+        )}&body=${encodeURIComponent(body)}`;
+        setStatus("idle");
       }
-      form.reset();
-      setStatus("sent");
     } catch {
       setStatus("error");
     }
